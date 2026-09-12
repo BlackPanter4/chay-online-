@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Recargas Luchanas PRO - Spin OXXO</title>
+<link rel="manifest" href="manifest.json">
+<style>
+body{margin:0;background:#f5f5f5;font-family:Arial}
+.header{background:#6a1bff;color:#fff;padding:16px;text-align:center;font-weight:900}
+.card{background:#fff;margin:12px;padding:14px;border-radius:14px;box-shadow:0 2px 8px #0001}
+.op{border:2px solid #eee;border-radius:12px;padding:10px;text-align:center;font-weight:800;display:inline-block;width:28%;margin:4px}
+.op.act{border-color:#6a1bff;background:#f3e8ff}
+.btn{width:100%;padding:16px;border:0;border-radius:12px;font-weight:900;color:#fff;margin-top:8px;font-size:16px}
+.m{padding:8px 14px;border:1px solid #ddd;border-radius:20px;margin:4px;display:inline-block}
+.m.act{background:#6a1bff;color:#fff}
+</style>
+</head>
+<body>
+<div class="header">⚡ RECARGAS LUCHANAS - SPIN OXXO 24H<br><small>Telcel | OXXO CEL | BAIT | AT&T | Movistar</small></div>
+<div class="card"><b>Compañía</b><div id="ops"><div class="op act" onclick="sel('Telcel',this)">Telcel</div><div class="op" onclick="sel('OXXO CEL',this)">OXXO CEL</div><div class="op" onclick="sel('BAIT',this)">BAIT</div><div class="op" onclick="sel('AT&T',this)">AT&T</div><div class="op" onclick="sel('Movistar',this)">Movistar</div></div></div>
+<div class="card"><b>Número</b><br><input id="num" type="tel" placeholder="10 dígitos ej 8713329005" style="width:92%;padding:12px;border-radius:8px;border:1px solid #ccc"></div>
+<div class="card"><b>Monto</b><br><span class="m" onclick="mo(20,this)">$20</span><span class="m" onclick="mo(50,this)">$50</span><span class="m act" onclick="mo(100,this)">$100</span><span class="m" onclick="mo(200,this)">$200</span></div>
+<div class="card">
+<button class="btn" style="background:#0f9d58" onclick="pedir()">1️⃣ PEDIR POR WHATSAPP + SPIN</button>
+<button class="btn" style="background:#6a1bff" onclick="ya()">2️⃣ YA PAGUÉ POR SPIN - ACTIVAR</button>
+<div id="res" style="margin-top:10px"></div>
+</div>
+<script>
+let comp='Telcel',monto=100;
+function sel(c,e){comp=c;document.querySelectorAll('.op').forEach(o=>o.classList.remove('act'));e.classList.add('act')}
+function mo(m,e){monto=m;document.querySelectorAll('.m').forEach(o=>o.classList.remove('act'));e.classList.add('act')}
+function pedir(){
+let n=document.getElementById('num').value; if(n.length<10){alert('Pon 10 dígitos');return;}
+window.open('https://wa.me/528721551986?text='+encodeURIComponent('Hola! Recarga '+comp+' $'+monto+' al '+n+'. Pago por Spin OXXO Luchanas')),'_blank');
+document.getElementById('res').innerHTML='Ahora paga $'+(monto+5)+' a Spin 8721551986 y dale al botón 2️⃣';
+}
+function ya(){
+let n=document.getElementById('num').value;
+window.open('https://t.me/Agente89_bot?text='+encodeURIComponent('PEDIDO PAGADO: '+comp+' $'+monto+' al '+n),'_blank');
+document.getElementById('res').innerHTML='✅ Enviado a Agente89_bot. Ticket Q777-'+Date.now();
+}
+</script>
+</body>
+</html>
