@@ -1,0 +1,9 @@
+{
+  "name": "Recargas Luchanas Spin",
+  "short_name": "Recargas",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f5f5f5",
+  "theme_color": "#6a1bff",
+  "icons": [{"src":"https://cdn-icons-png.flaticon.com/512/724/724664.png","sizes":"512x512","type":"image/png"}]
+}
